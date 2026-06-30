@@ -1,0 +1,1897 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karam كرم — Home food, delivered</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700;800&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- TOKENS ---------- */
+:root{
+  --sand:#F7F1E5;
+  --sand-2:#EFE6D3;
+  --ink:#231F1B;
+  --ink-2:#4A423B;
+  --teal:#1F4D4A;
+  --teal-2:#143735;
+  --teal-soft:#2C6A66;
+  --saffron:#D4A24C;
+  --saffron-2:#B7872E;
+  --pomegranate:#9B2D20;
+  --pomegranate-2:#7A2118;
+  --olive:#6B7F3A;
+  --line:rgba(35,31,27,.12);
+  --line-2:rgba(35,31,27,.22);
+  --shadow:0 1px 2px rgba(35,31,27,.06), 0 8px 24px rgba(35,31,27,.08);
+  --shadow-lg:0 4px 12px rgba(35,31,27,.10), 0 24px 60px rgba(35,31,27,.18);
+  --r-sm:8px; --r-md:14px; --r-lg:22px; --r-xl:32px;
+  --display:'Amiri', 'Times New Roman', serif;
+  --kufi:'Reem Kufi', 'Cairo', system-ui, sans-serif;
+  --body:'Cairo', system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+/* ---------- BASE ---------- */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--body);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--sand);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  line-height:1.5;
+  min-height:100vh;
+}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,textarea,select{font-family:inherit;font-size:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.15;margin:0;letter-spacing:-.01em}
+.ar{font-family:var(--display);direction:rtl;unicode-bidi:isolate}
+.kufi{font-family:var(--kufi);font-weight:500}
+
+/* ---------- PATTERN (khatam) ---------- */
+.pattern{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%231F4D4A' stroke-width='1' opacity='.12'><polygon points='40,8 48,24 64,24 52,36 56,52 40,44 24,52 28,36 16,24 32,24'/><rect x='30' y='30' width='20' height='20' transform='rotate(45 40 40)'/></g></svg>");
+  background-size:80px 80px;
+}
+.divider{
+  height:48px;display:flex;align-items:center;justify-content:center;gap:14px;color:var(--saffron);
+  margin:8px 0;
+}
+.divider::before, .divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right, transparent, var(--saffron) 40%, var(--saffron) 60%, transparent)}
+.divider svg{flex:none}
+
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:88px 0;position:relative}
+section.compact{padding:56px 0}
+.eyebrow{
+  font-family:var(--kufi);
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--saffron-2);
+  font-weight:600;
+}
+.section-head{margin-bottom:48px;max-width:720px}
+.section-head h2{font-size:clamp(34px,4.6vw,52px);margin-top:10px;color:var(--teal)}
+.section-head p{color:var(--ink-2);margin-top:14px;font-size:17px}
+
+/* ---------- HEADER ---------- */
+.nav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(247,241,229,.85);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;max-width:1200px;margin:0 auto;
+}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .mark{
+  width:38px;height:38px;border-radius:10px;
+  background:var(--teal);
+  display:grid;place-items:center;
+  color:var(--saffron);
+  font-family:var(--display);font-weight:700;font-size:22px;
+  position:relative;
+}
+.logo .mark::after{
+  content:'';position:absolute;inset:4px;border:1px solid rgba(212,162,76,.55);border-radius:6px;
+  transform:rotate(45deg);
+}
+.logo .name{font-family:var(--display);font-size:22px;font-weight:700;color:var(--teal);letter-spacing:.01em}
+.logo .name small{font-family:var(--display);font-size:22px;color:var(--saffron-2);margin-left:6px}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-family:var(--kufi);font-size:14px;font-weight:500;color:var(--ink-2);transition:color .15s}
+.nav-links a:hover{color:var(--teal)}
+.nav-links a.nav-cta{
+  background:var(--pomegranate);color:#fff;
+  padding:9px 18px;border-radius:999px;font-weight:600;
+  box-shadow:0 4px 12px rgba(155,45,32,.28);
+  transition:background .15s, transform .15s;
+}
+.nav-links a.nav-cta:hover{background:var(--pomegranate-2);color:#fff;transform:translateY(-1px)}
+.cart-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:999px;
+  background:var(--teal);color:var(--sand);
+  font-family:var(--kufi);font-weight:600;font-size:13px;
+  transition:background .15s, transform .15s;
+}
+.cart-btn:hover{background:var(--teal-2)}
+.cart-btn .count{
+  background:var(--saffron);color:var(--teal-2);
+  font-size:11px;font-weight:700;
+  padding:1px 7px;border-radius:999px;min-width:18px;text-align:center;
+}
+.nav-toggle{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-2)}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:96px 0 80px;
+  background:
+    radial-gradient(800px 400px at 88% 18%, rgba(212,162,76,.18), transparent 60%),
+    radial-gradient(700px 500px at 8% 90%, rgba(31,77,74,.14), transparent 60%),
+    var(--sand);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%231F4D4A' stroke-width='1' opacity='.07'><polygon points='60,12 72,36 96,36 78,54 84,78 60,66 36,78 42,54 24,36 48,36'/><rect x='45' y='45' width='30' height='30' transform='rotate(45 60 60)'/></g></svg>");
+  background-size:120px 120px;
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;
+}
+.hero h1{
+  font-size:clamp(48px,7vw,88px);
+  color:var(--teal);
+  line-height:1.02;
+  letter-spacing:-.02em;
+}
+.hero h1 .ar-greet{
+  display:block;
+  font-size:.55em;color:var(--pomegranate);
+  margin-bottom:14px;font-weight:400;
+  letter-spacing:0;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--saffron-2);
+  position:relative;
+  display:inline-block;
+}
+.hero h1 em::after{
+  content:'';position:absolute;left:0;right:0;bottom:.06em;height:8px;
+  background:var(--saffron);opacity:.28;border-radius:4px;z-index:-1;
+}
+.hero-lede{
+  color:var(--ink-2);font-size:19px;line-height:1.55;margin:28px 0 36px;max-width:540px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 28px;border-radius:999px;
+  font-family:var(--kufi);font-weight:600;font-size:14px;letter-spacing:.02em;
+  transition:transform .15s, background .15s, box-shadow .15s;
+  cursor:pointer;border:0;
+}
+.btn-primary{background:var(--pomegranate);color:#fff;box-shadow:0 8px 22px rgba(155,45,32,.32)}
+.btn-primary:hover{background:var(--pomegranate-2);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn-ghost:hover{background:var(--teal);color:var(--sand)}
+.btn-saffron{background:var(--saffron);color:var(--teal-2)}
+.btn-saffron:hover{background:var(--saffron-2);color:#fff}
+
+.hero-meta{display:flex;gap:28px;margin-top:42px;flex-wrap:wrap}
+.hero-meta .m{display:flex;gap:10px;align-items:center}
+.hero-meta .m b{font-family:var(--display);font-size:24px;color:var(--teal);display:block;line-height:1}
+.hero-meta .m span{font-size:13px;color:var(--ink-2);font-family:var(--kufi)}
+
+/* hero visual */
+.hero-art{
+  position:relative;aspect-ratio:1/1;max-width:480px;justify-self:end;width:100%;
+}
+.hero-art .plate{
+  position:absolute;inset:0;
+  border-radius:50%;
+  background:
+    conic-gradient(from 0deg, var(--teal), var(--teal-soft), var(--teal), var(--teal-soft), var(--teal));
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+}
+.hero-art .plate::after{
+  content:'';position:absolute;inset:18px;border-radius:50%;
+  border:2px dashed rgba(212,162,76,.45);
+}
+.hero-art .photo{
+  position:absolute;inset:34px;border-radius:50%;overflow:hidden;
+  background:#000;
+  box-shadow:inset 0 0 0 3px var(--saffron), inset 0 0 0 6px var(--teal-2);
+}
+.hero-art .photo img{width:100%;height:100%;object-fit:cover;opacity:.95}
+.hero-art .badge{
+  position:absolute;top:-8px;left:-8px;
+  background:var(--pomegranate);color:#fff;
+  padding:14px 18px;border-radius:50%;
+  font-family:var(--display);font-size:14px;font-weight:700;text-align:center;line-height:1.1;
+  width:96px;height:96px;display:grid;place-items:center;
+  transform:rotate(-12deg);
+  box-shadow:0 8px 18px rgba(155,45,32,.4);
+}
+.hero-art .badge small{display:block;font-size:10px;font-weight:400;letter-spacing:.1em;opacity:.85}
+
+/* ---------- CATEGORIES STRIP ---------- */
+#menu{background:var(--sand)}
+.cats{
+  display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;
+}
+.cat-pill{
+  padding:10px 18px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);
+  font-family:var(--kufi);font-weight:600;font-size:14px;color:var(--ink-2);
+  display:flex;align-items:center;gap:8px;
+  transition:all .15s;
+}
+.cat-pill:hover{border-color:var(--teal);color:var(--teal)}
+.cat-pill.active{background:var(--teal);color:var(--sand);border-color:var(--teal)}
+.cat-pill .ar{font-size:13px;opacity:.85}
+
+/* ---------- MENU GRID ---------- */
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dish{
+  background:#fff;border-radius:var(--r-lg);overflow:hidden;
+  border:1px solid var(--line);
+  display:flex;flex-direction:column;
+  transition:transform .2s, box-shadow .2s;
+  position:relative;
+}
+.dish:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.dish .img{aspect-ratio:4/3;overflow:hidden;background:var(--sand-2);position:relative}
+.dish .img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.dish:hover .img img{transform:scale(1.04)}
+.dish .img .tag{
+  position:absolute;top:12px;left:12px;
+  background:var(--pomegranate);color:#fff;
+  font-family:var(--kufi);font-size:11px;font-weight:600;
+  padding:4px 10px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;
+}
+.dish .body{padding:20px;display:flex;flex-direction:column;flex:1}
+.dish .body h3{font-size:22px;color:var(--teal);margin:0}
+.dish .body .name-ar{font-family:var(--display);font-size:18px;color:var(--saffron-2);margin-top:2px;direction:rtl}
+.dish .body p{color:var(--ink-2);font-size:14px;margin:10px 0 18px;line-height:1.5;flex:1}
+.dish .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}
+.dish .price{font-family:var(--display);font-size:24px;font-weight:700;color:var(--ink)}
+.dish .price small{font-family:var(--kufi);font-size:12px;color:var(--ink-2);font-weight:400}
+.add-btn{
+  display:flex;align-items:center;gap:6px;
+  padding:10px 16px;border-radius:999px;
+  background:var(--teal);color:var(--sand);
+  font-family:var(--kufi);font-weight:600;font-size:13px;
+  transition:background .15s;
+}
+.add-btn:hover{background:var(--pomegranate)}
+
+.empty-state{
+  grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--ink-2);
+  background:#fff;border-radius:var(--r-lg);border:1px dashed var(--line-2);
+}
+.empty-state h3{color:var(--teal);font-size:24px;margin-bottom:8px}
+
+/* ---------- GALLERY ---------- */
+#gallery{background:var(--sand-2);position:relative;overflow:hidden}
+#gallery::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%231F4D4A' stroke-width='1' opacity='.06'><polygon points='40,8 48,24 64,24 52,36 56,52 40,44 24,52 28,36 16,24 32,24'/><rect x='30' y='30' width='20' height='20' transform='rotate(45 40 40)'/></g></svg>");
+  background-size:80px 80px;pointer-events:none;
+}
+#gallery .wrap{position:relative}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  grid-auto-rows:200px;
+}
+.gallery-item{
+  border-radius:var(--r-md);overflow:hidden;
+  background:var(--sand);position:relative;
+  border:1px solid var(--line);
+  transition:transform .2s;
+}
+.gallery-item:hover{transform:translateY(-2px)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item .cap{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:14px;color:#fff;
+  background:linear-gradient(0deg, rgba(0,0,0,.65), transparent);
+  font-family:var(--kufi);font-size:13px;font-weight:500;
+  opacity:0;transition:opacity .2s;
+}
+.gallery-item:hover .cap{opacity:1}
+
+/* ---------- DELIVERY CHECK ---------- */
+.pc-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}
+.pc-status{
+  padding:12px 14px;border-radius:var(--r-md);font-family:var(--kufi);font-size:13px;
+  margin-top:10px;line-height:1.5;
+}
+.pc-status.ok{background:#e9efd4;color:#3b4a1e;border:1px solid var(--olive)}
+.pc-status.err{background:#f9e2df;color:#7a2118;border:1px solid var(--pomegranate)}
+.pc-status.loading{background:rgba(212,162,76,.15);color:var(--saffron-2)}
+.pc-status b{font-family:var(--display);font-size:15px;display:block;margin-bottom:2px}
+
+/* ---------- REVIEWS ---------- */
+#reviews{background:linear-gradient(180deg, var(--sand) 0%, var(--sand-2) 100%)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review{
+  background:#fff;border-radius:var(--r-lg);padding:28px;
+  border:1px solid var(--line);
+  position:relative;
+}
+.review::before{
+  content:'"';font-family:var(--display);font-size:120px;color:var(--saffron);opacity:.2;
+  position:absolute;top:-20px;right:14px;line-height:1;
+}
+.review .stars{color:var(--saffron-2);font-size:18px;letter-spacing:2px;margin-bottom:12px}
+.review .text{color:var(--ink);font-size:15px;line-height:1.6;margin-bottom:18px;position:relative;z-index:1}
+.review .who{display:flex;align-items:center;gap:12px}
+.review .avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--teal);color:var(--saffron);
+  display:grid;place-items:center;
+  font-family:var(--display);font-size:18px;font-weight:700;
+}
+.review .who b{font-family:var(--kufi);font-weight:600;font-size:14px;display:block}
+.review .who small{font-size:12px;color:var(--ink-2)}
+.google-tag{
+  display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  font-family:var(--kufi);font-size:13px;color:var(--ink-2);
+}
+
+/* ---------- HOURS ---------- */
+.hours-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.hours-list{
+  background:#fff;border-radius:var(--r-lg);padding:8px;
+  border:1px solid var(--line);
+}
+.hours-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 22px;border-radius:var(--r-md);
+}
+.hours-row + .hours-row{border-top:1px solid var(--line)}
+.hours-row.today{background:linear-gradient(90deg, rgba(212,162,76,.12), transparent)}
+.hours-row .day{font-family:var(--kufi);font-weight:600;color:var(--teal)}
+.hours-row .day-ar{font-family:var(--display);color:var(--ink-2);font-size:14px;margin-left:8px}
+.hours-row .time{font-family:var(--kufi);color:var(--ink-2);font-size:14px}
+.hours-row.today .time::after{
+  content:'• Open now';color:var(--olive);font-weight:600;margin-left:10px;
+}
+.hours-row.closed .time{color:var(--pomegranate)}
+.hours-aside{padding-top:24px}
+.hours-aside h3{font-size:32px;color:var(--teal)}
+.hours-aside p{color:var(--ink-2);margin:14px 0}
+
+/* ---------- CONTACT ---------- */
+#contact{background:var(--teal);color:var(--sand);position:relative;overflow:hidden}
+#contact::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><g fill='none' stroke='%23D4A24C' stroke-width='1' opacity='.12'><polygon points='50,10 60,30 80,30 65,45 70,65 50,55 30,65 35,45 20,30 40,30'/><rect x='37.5' y='37.5' width='25' height='25' transform='rotate(45 50 50)'/></g></svg>");
+  background-size:100px 100px;pointer-events:none;
+}
+#contact .wrap{position:relative}
+#contact .eyebrow{color:var(--saffron)}
+#contact .section-head h2{color:var(--sand)}
+#contact .section-head p{color:rgba(247,241,229,.78)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-actions{display:grid;gap:14px}
+.contact-card{
+  background:rgba(247,241,229,.06);border:1px solid rgba(212,162,76,.25);
+  padding:24px;border-radius:var(--r-lg);
+  display:flex;align-items:center;gap:18px;
+  transition:background .15s, border-color .15s, transform .15s;
+}
+.contact-card:hover{background:rgba(247,241,229,.10);border-color:var(--saffron);transform:translateY(-2px)}
+.contact-card .ico{
+  width:54px;height:54px;border-radius:14px;
+  display:grid;place-items:center;color:#fff;flex:none;
+}
+.contact-card .ico.wa{background:#25D366}
+.contact-card .ico.tg{background:#229ED9}
+.contact-card .ico.mail{background:var(--saffron);color:var(--teal-2)}
+.contact-card b{display:block;font-family:var(--kufi);font-size:15px;font-weight:600}
+.contact-card span{font-size:13px;color:rgba(247,241,229,.7)}
+.form-card{
+  background:rgba(247,241,229,.06);border:1px solid rgba(212,162,76,.25);
+  padding:32px;border-radius:var(--r-lg);
+}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--kufi);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron);margin-bottom:6px}
+.field input, .field textarea{
+  width:100%;padding:13px 16px;border-radius:var(--r-md);
+  background:rgba(247,241,229,.08);border:1px solid rgba(212,162,76,.3);
+  color:var(--sand);font-size:15px;
+  transition:border-color .15s, background .15s;
+}
+.field input:focus, .field textarea:focus{
+  outline:none;border-color:var(--saffron);background:rgba(247,241,229,.12);
+}
+.field textarea{min-height:110px;resize:vertical;font-family:inherit}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--teal-2);color:rgba(247,241,229,.7);padding:36px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center}
+footer a{color:var(--saffron);font-family:var(--kufi)}
+
+/* ---------- CART DRAWER ---------- */
+.drawer-back{
+  position:fixed;inset:0;background:rgba(35,31,27,.45);z-index:60;
+  opacity:0;pointer-events:none;transition:opacity .25s;
+}
+.drawer-back.open{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);
+  background:var(--sand);z-index:61;
+  transform:translateX(100%);transition:transform .3s ease;
+  display:flex;flex-direction:column;
+  box-shadow:-12px 0 40px rgba(0,0,0,.18);
+}
+.drawer.open{transform:translateX(0)}
+.drawer-head{padding:22px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.drawer-head h3{font-size:24px;color:var(--teal)}
+.drawer-close{width:38px;height:38px;border-radius:50%;background:var(--sand-2);display:grid;place-items:center}
+.drawer-body{flex:1;overflow-y:auto;padding:8px 16px}
+.cart-item{
+  display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;
+  padding:14px;border-bottom:1px solid var(--line);
+}
+.cart-item img{width:64px;height:64px;border-radius:var(--r-md);object-fit:cover;background:var(--sand-2)}
+.cart-item .info b{display:block;font-family:var(--kufi);font-weight:600;font-size:14px}
+.cart-item .info small{color:var(--ink-2);font-size:12px}
+.qty{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:6px}
+.qty button{width:24px;height:24px;border-radius:50%;background:var(--sand-2);display:grid;place-items:center;font-weight:700;color:var(--teal)}
+.qty span{min-width:18px;text-align:center;font-family:var(--kufi);font-weight:600;font-size:13px}
+.cart-item .price{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink)}
+.cart-empty{padding:60px 24px;text-align:center;color:var(--ink-2)}
+.cart-empty h4{color:var(--teal);font-size:22px;margin-bottom:8px}
+.drawer-foot{padding:20px 24px;border-top:1px solid var(--line);background:#fff}
+.summary-row{display:flex;justify-content:space-between;margin:6px 0;font-family:var(--kufi);font-size:14px;color:var(--ink-2)}
+.summary-row.total{font-size:18px;color:var(--teal);font-weight:700;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line-2)}
+.checkout-form{margin-top:16px;display:grid;gap:10px}
+.checkout-form label{font-family:var(--kufi);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.checkout-form input, .checkout-form textarea, .checkout-form select{
+  width:100%;padding:11px 14px;border-radius:var(--r-md);
+  background:var(--sand);border:1px solid var(--line-2);font-size:14px;
+}
+.checkout-form input:focus, .checkout-form textarea:focus{outline:none;border-color:var(--teal)}
+.checkout-form textarea{min-height:64px;resize:vertical}
+.place-order{
+  margin-top:14px;width:100%;justify-content:center;
+  padding:16px;font-size:15px;
+}
+
+/* ---------- TOASTS ---------- */
+.toast-host{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;align-items:center}
+.toast{
+  background:var(--ink);color:var(--sand);padding:12px 20px;border-radius:999px;
+  font-family:var(--kufi);font-size:14px;box-shadow:var(--shadow-lg);
+  animation:toastIn .25s ease both;
+}
+.toast.ok{background:var(--olive)}
+.toast.err{background:var(--pomegranate)}
+@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- ADMIN ---------- */
+.admin{background:#0f1f1e;color:var(--sand);min-height:100vh}
+.admin-nav{
+  background:var(--teal-2);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid rgba(212,162,76,.2);
+}
+.admin-nav .logo .name, .admin-nav .logo .name small{color:var(--saffron)}
+.admin-nav .right{display:flex;gap:10px;align-items:center}
+.admin-wrap{max-width:1080px;margin:0 auto;padding:36px 24px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;border-bottom:1px solid rgba(212,162,76,.2);padding-bottom:0}
+.tab{
+  padding:11px 18px;font-family:var(--kufi);font-weight:500;font-size:14px;
+  color:rgba(247,241,229,.6);border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:color .15s, border-color .15s;
+}
+.tab:hover{color:var(--saffron)}
+.tab.active{color:var(--saffron);border-color:var(--saffron)}
+.panel{display:none}
+.panel.active{display:block}
+.panel h2{font-family:var(--kufi);font-weight:700;font-size:22px;color:var(--sand);margin-bottom:6px}
+.panel .sub{color:rgba(247,241,229,.6);font-size:14px;margin-bottom:24px}
+.card{background:#15302e;border:1px solid rgba(212,162,76,.18);border-radius:var(--r-lg);padding:24px;margin-bottom:20px}
+.card h3{font-family:var(--kufi);font-weight:600;font-size:16px;color:var(--saffron);margin-bottom:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+.row.three{grid-template-columns:repeat(3,1fr)}
+.row.full{grid-template-columns:1fr}
+.adm-field label{display:block;font-family:var(--kufi);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron);margin-bottom:6px}
+.adm-field input, .adm-field textarea, .adm-field select{
+  width:100%;padding:11px 13px;border-radius:var(--r-sm);
+  background:#0f1f1e;border:1px solid rgba(212,162,76,.22);color:var(--sand);font-size:14px;
+}
+.adm-field input:focus, .adm-field textarea:focus{outline:none;border-color:var(--saffron)}
+.adm-field textarea{min-height:80px;resize:vertical}
+.adm-btn{
+  padding:10px 18px;border-radius:var(--r-sm);background:var(--saffron);color:var(--teal-2);
+  font-family:var(--kufi);font-weight:600;font-size:13px;cursor:pointer;border:0;
+}
+.adm-btn:hover{background:#E8B85F}
+.adm-btn.ghost{background:transparent;color:var(--saffron);border:1px solid var(--saffron)}
+.adm-btn.danger{background:var(--pomegranate);color:#fff}
+.adm-btn.danger:hover{background:var(--pomegranate-2)}
+.adm-btn.sm{padding:6px 12px;font-size:12px}
+.item-row{
+  display:grid;grid-template-columns:72px 1fr auto auto;gap:14px;align-items:center;
+  padding:14px;background:#0f1f1e;border-radius:var(--r-md);margin-bottom:10px;
+  border:1px solid rgba(212,162,76,.12);
+}
+.item-row img{width:72px;height:72px;border-radius:var(--r-sm);object-fit:cover;background:#000}
+.item-row .meta b{font-family:var(--kufi);font-weight:600;font-size:14px}
+.item-row .meta small{color:rgba(247,241,229,.55);font-size:12px;display:block;margin-top:3px}
+.item-row .meta .price-tag{color:var(--saffron);font-family:var(--display);font-size:16px;font-weight:700;margin-top:4px;display:inline-block}
+.actions{display:flex;gap:6px}
+.muted{color:rgba(247,241,229,.55);font-size:13px;font-family:var(--kufi)}
+
+.login-card{
+  max-width:420px;margin:120px auto;padding:36px;
+  background:#15302e;border:1px solid rgba(212,162,76,.2);border-radius:var(--r-lg);
+}
+.login-card h2{font-family:var(--display);font-size:32px;color:var(--saffron);margin-bottom:6px}
+.login-card p{color:rgba(247,241,229,.6);margin-bottom:24px;font-size:14px}
+
+.help-box{
+  background:rgba(212,162,76,.08);border:1px solid rgba(212,162,76,.25);
+  padding:14px 18px;border-radius:var(--r-sm);color:rgba(247,241,229,.85);font-size:13px;
+  line-height:1.6;margin-bottom:16px;
+}
+.help-box code{background:rgba(0,0,0,.3);padding:1px 6px;border-radius:3px;font-size:12px}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero{padding:56px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-art{max-width:340px;margin:0 auto;justify-self:center}
+  .menu-grid{grid-template-columns:repeat(2,1fr)}
+  .review-grid{grid-template-columns:1fr}
+  .hours-wrap{grid-template-columns:1fr;gap:28px}
+  .contact-grid{grid-template-columns:1fr;gap:28px}
+  .nav-links{display:none}
+  .nav-toggle{display:grid;place-items:center}
+  .row, .row.three{grid-template-columns:1fr}
+  .item-row{grid-template-columns:60px 1fr auto;gap:10px}
+  .item-row img{width:60px;height:60px}
+  .item-row .actions{grid-column:1/-1;justify-content:flex-end}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+}
+@media (max-width:560px){
+  .menu-grid{grid-template-columns:1fr}
+  .hero-meta{gap:18px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}
+}
+
+/* mobile menu sheet */
+.mobile-menu{
+  display:none;position:fixed;top:0;right:0;width:80%;max-width:320px;height:100vh;
+  background:var(--sand);z-index:50;padding:80px 28px 28px;
+  transform:translateX(100%);transition:transform .3s;
+  box-shadow:-8px 0 24px rgba(0,0,0,.12);
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{display:block;padding:14px 0;font-family:var(--kufi);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line)}
+@media (max-width:900px){.mobile-menu{display:block}}
+</style>
+</head>
+<body>
+
+<!-- ============ STOREFRONT ============ -->
+<div id="storefront">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="mark">ك</div>
+        <div class="name" id="brand-name">Karam <small id="brand-ar">كرم</small></div>
+      </a>
+      <nav class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+        <a href="#menu" class="nav-cta">Order now</a>
+      </nav>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="cart-btn" id="open-cart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+          Cart <span class="count" id="cart-count">0</span>
+        </button>
+        <button class="nav-toggle" id="mobile-toggle" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#menu" data-close-mob>Menu</a>
+    <a href="#gallery" data-close-mob>Gallery</a>
+    <a href="#reviews" data-close-mob>Reviews</a>
+    <a href="#hours" data-close-mob>Hours</a>
+    <a href="#contact" data-close-mob>Contact</a>
+    <a href="#menu" data-close-mob style="color:var(--pomegranate);font-weight:700">Order now →</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>
+            <span class="ar-greet ar">أهلاً وسهلاً</span>
+            Home food, <em>delivered</em>.
+          </h1>
+          <p class="hero-lede" id="hero-tagline">Real Arab cooking for students far from home. Shawarma the way your aunt would make it, mansaf that doesn't apologise, and sweets that taste like Eid morning.</p>
+          <div class="hero-cta">
+            <a href="#menu" class="btn btn-primary">
+              Order now
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#hours" class="btn btn-ghost">Opening hours</a>
+          </div>
+          <div class="hero-meta">
+            <div class="m"><div>🚲</div><div><b id="hero-delivery-min">25</b><span>min delivery</span></div></div>
+            <div class="m"><div>⭐</div><div><b>4.9</b><span>from 200+ orders</span></div></div>
+            <div class="m"><div>🥘</div><div><b id="hero-dish-count">12</b><span>dishes on menu</span></div></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="badge">طازج<small>fresh daily</small></div>
+          <div class="plate">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?w=900&q=80" alt="Mezze platter" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">القائمة · The menu</div>
+        <h2>Everything on the table.</h2>
+        <p>Tap any dish to add it. Free delivery over the minimum order.</p>
+      </div>
+      <div class="cats" id="cats"></div>
+      <div class="menu-grid" id="menu-grid"></div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 9h7l-5.5 4.5L17.5 21 12 17l-5.5 4 2-7.5L3 9h7Z"/></svg>
+  </div></div>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">من المطبخ · From the kitchen</div>
+        <h2>The work behind the plate.</h2>
+        <p>Bread proving, lamb slow-roasting, knafeh stretching — what we look like on an ordinary morning.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 9h7l-5.5 4.5L17.5 21 12 17l-5.5 4 2-7.5L3 9h7Z"/></svg>
+  </div></div>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">آراء الزبائن · What people say</div>
+        <h2>Five stars, served warm.</h2>
+        <p>Reviews from students who found a piece of home.</p>
+      </div>
+      <div class="review-grid" id="review-grid"></div>
+      <div class="google-tag">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        From our Google reviews
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS -->
+  <section id="hours" class="compact">
+    <div class="wrap">
+      <div class="hours-wrap">
+        <div class="hours-list" id="hours-list"></div>
+        <div class="hours-aside">
+          <div class="eyebrow">ساعات العمل · Hours</div>
+          <h3>The kitchen runs warm,<br/>seven days a week.</h3>
+          <p id="hours-note">Last orders 30 minutes before closing. Delivery may pause briefly during prayer times on Fridays.</p>
+          <p class="muted">Public holidays sometimes vary — check our Telegram for updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">تواصل معنا · Get in touch</div>
+        <h2>Talk to us.</h2>
+        <p>Catering, allergies, a special request — message however you like.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-actions">
+          <a class="contact-card" id="wa-link" target="_blank" rel="noopener">
+            <div class="ico wa">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.2-.2.3-.7.9-.8 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.7 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.3-.7.3-1.2.2-1.4l-.5-.5zM12 22c-1.7 0-3.4-.4-4.8-1.3L3 22l1.3-4.1C3.4 16.4 3 14.7 3 13 3 8 7 4 12 4s9 4 9 9-4 9-9 9z"/></svg>
+            </div>
+            <div><b>Chat on WhatsApp</b><span id="wa-display">Tap to message us</span></div>
+          </a>
+          <a class="contact-card" id="tg-link" target="_blank" rel="noopener">
+            <div class="ico tg">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 3.4 2.5 10.7c-1.1.4-1.1 1.6-.2 1.9l4.7 1.5 1.8 5.6c.2.5.8.6 1.2.3l2.6-2.1 4.8 3.5c.7.5 1.7.1 1.9-.8l3.4-15.6c.2-1-.7-1.9-1-1.6zM9.4 14.6l-.4 4.2 1.6-2.5L9.4 14.6zm9-7.4-7.7 7.1-.3 3.1L18.4 7.2z"/></svg>
+            </div>
+            <div><b>Chat on Telegram</b><span id="tg-display">Tap to open</span></div>
+          </a>
+          <div class="contact-card" style="cursor:default">
+            <div class="ico mail">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </div>
+            <div><b id="email-display">hello@alkaram.eu</b><span>Reply within a day</span></div>
+          </div>
+        </div>
+        <div class="form-card">
+          <form id="contact-form">
+            <div class="field"><label>Your name</label><input required name="name" placeholder="What should we call you?"/></div>
+            <div class="field"><label>Phone or Telegram</label><input required name="contact" placeholder="+33… or @handle"/></div>
+            <div class="field"><label>Message</label><textarea required name="message" placeholder="Tell us what you need."></textarea></div>
+            <button type="submit" class="btn btn-saffron" style="width:100%;justify-content:center">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> <span id="footer-name">Al-Karam</span> — made with كرم for students abroad.</div>
+      <div><a href="#admin">Admin</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-back" id="drawer-back"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Your cart <span class="ar" style="font-size:18px;color:var(--saffron-2);margin-left:6px">سلتك</span></h3>
+    <button class="drawer-close" id="close-cart" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+  <div class="drawer-foot" id="drawer-foot"></div>
+</aside>
+
+<!-- ============ ADMIN ============ -->
+<div id="admin-app" class="admin" style="display:none">
+  <div class="admin-nav">
+    <a href="#" class="logo">
+      <div class="mark">ك</div>
+      <div class="name">Admin <small>الإدارة</small></div>
+    </a>
+    <div class="right">
+      <a href="#" class="adm-btn ghost sm">View site</a>
+      <button class="adm-btn sm" id="admin-logout">Sign out</button>
+    </div>
+  </div>
+  <div class="admin-wrap" id="admin-wrap"></div>
+</div>
+
+<div class="toast-host" id="toast-host"></div>
+
+<script>
+/* =============================================================
+   KARAM — Vercel-deployed version
+   Talks to /api/* (Vercel functions) instead of window.storage.
+   ============================================================= */
+
+const API = {
+  data: '/api/data',
+  contact: '/api/contact',
+  checkout: '/api/checkout',
+  adminLogin: '/api/admin/login',
+  adminSave: '/api/admin/save',
+  adminReset: '/api/admin/reset',
+  adminTestTelegram: '/api/admin/test-telegram',
+};
+
+const TOKEN_KEY = 'karam_admin_token';
+function getToken() { try { return localStorage.getItem(TOKEN_KEY); } catch { return null; } }
+function setToken(t) { try { localStorage.setItem(TOKEN_KEY, t); } catch {} }
+function clearToken() { try { localStorage.removeItem(TOKEN_KEY); } catch {} }
+
+async function api(path, { method='GET', body=null, auth=false } = {}) {
+  const headers = { 'Content-Type': 'application/json' };
+  if (auth) {
+    const t = getToken();
+    if (!t) throw new Error('Not signed in');
+    headers.Authorization = 'Bearer ' + t;
+  }
+  const r = await fetch(path, {
+    method,
+    headers,
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    if (r.status === 401) { clearToken(); STATE.adminAuthed = false; }
+    throw new Error(data.error || ('Request failed (' + r.status + ')'));
+  }
+  return data;
+}
+
+let STATE = {
+  config:null, categories:[], menu:[], reviews:[], hours:[], gallery:[],
+  cart:[], activeCat:'all', adminAuthed:false, delivery:null,
+  serviceStatus: { telegram:false, stripe:false, stripePublishableKey:null },
+};
+
+async function bootstrap() {
+  try {
+    const all = await api(API.data);
+    STATE.config = all.config;
+    STATE.categories = all.categories;
+    STATE.menu = all.menu;
+    STATE.reviews = all.reviews;
+    STATE.hours = all.hours;
+    STATE.gallery = all.gallery;
+    STATE.serviceStatus = all._status || STATE.serviceStatus;
+  } catch (e) {
+    document.body.innerHTML = `<div style="max-width:520px;margin:80px auto;padding:32px;font-family:system-ui;text-align:center"><h2>Couldn't load the menu</h2><p style="color:#888">${e.message}</p><p>Try refreshing. If this keeps happening, check the server logs in your Vercel dashboard.</p></div>`;
+    return;
+  }
+  // sign-in state
+  STATE.adminAuthed = Boolean(getToken());
+  STATE.cart = [];
+
+  route();
+  window.addEventListener('hashchange', route);
+}
+
+async function refreshData() {
+  const all = await api(API.data);
+  STATE.config = all.config;
+  STATE.categories = all.categories;
+  STATE.menu = all.menu;
+  STATE.reviews = all.reviews;
+  STATE.hours = all.hours;
+  STATE.gallery = all.gallery;
+  STATE.serviceStatus = all._status || STATE.serviceStatus;
+}
+
+async function saveServer(key, value) {
+  await api(API.adminSave, { method:'POST', body:{ key, value }, auth:true });
+}
+
+function route() {
+  if (location.hash === '#admin' || location.pathname === '/admin') {
+    document.getElementById('storefront').style.display = 'none';
+    document.getElementById('admin-app').style.display = 'block';
+    renderAdmin();
+  } else {
+    document.getElementById('storefront').style.display = 'block';
+    document.getElementById('admin-app').style.display = 'none';
+    renderStorefront();
+  }
+}
+
+/* ---------- storefront render ---------- */
+function renderStorefront(){
+  const c = STATE.config;
+  document.title = `${c.brandName} ${c.brandAr} — Home food, delivered`;
+  document.getElementById('brand-name').innerHTML = `${esc(c.brandName)} <small>${esc(c.brandAr)}</small>`;
+  document.getElementById('footer-name').textContent = c.brandName;
+  document.getElementById('hero-tagline').textContent = c.tagline;
+  document.getElementById('hero-delivery-min').textContent = c.baseDeliveryMin;
+  document.getElementById('hero-dish-count').textContent = STATE.menu.length;
+  document.getElementById('hours-note').textContent = c.hoursNote;
+  document.getElementById('email-display').textContent = c.email;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const waNum = (c.whatsappNumber||'').replace(/\D/g,'');
+  document.getElementById('wa-link').href = `https://wa.me/${waNum}?text=${encodeURIComponent('Hello! I have a question for '+c.brandName)}`;
+  document.getElementById('wa-display').textContent = waNum ? `+${waNum}` : 'Tap to message us';
+
+  const tgUser = (c.telegramUsername||'').replace(/^@/,'');
+  document.getElementById('tg-link').href = tgUser ? `https://t.me/${tgUser}` : '#';
+  document.getElementById('tg-display').textContent = tgUser ? `@${tgUser}` : 'Tap to open';
+
+  renderCategories();
+  renderMenu();
+  renderGallery();
+  renderReviews();
+  renderHours();
+  updateCartUI();
+
+  // If returning from a cancelled Stripe checkout, surface it
+  const p = new URLSearchParams(location.search);
+  if (p.get('cancelled') === '1') {
+    toast('Checkout cancelled — your cart is still here.', 'err');
+    history.replaceState({}, '', location.pathname);
+  }
+}
+
+function renderGallery(){
+  const host = document.getElementById('gallery-grid');
+  if (!STATE.gallery.length){
+    host.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:var(--ink-2);padding:40px">No photos yet.</div>`;
+    return;
+  }
+  host.innerHTML = STATE.gallery.map(g => `
+    <figure class="gallery-item ${g.size==='tall'?'tall':''} ${g.size==='wide'?'wide':''}">
+      <img src="${esc(g.image)}" alt="${esc(g.caption||'')}" loading="lazy" onerror="this.parentElement.style.display='none'">
+      ${g.caption ? `<figcaption class="cap">${esc(g.caption)}</figcaption>` : ''}
+    </figure>`).join('');
+}
+
+function renderCategories(){
+  const host = document.getElementById('cats');
+  const all = [{id:'all', name:'All', nameAr:'الكل', icon:'✦'}, ...STATE.categories];
+  host.innerHTML = all.map(c => `
+    <button class="cat-pill ${STATE.activeCat===c.id?'active':''}" data-cat="${esc(c.id)}">
+      <span>${esc(c.icon||'')}</span>
+      <span>${esc(c.name)}</span>
+      <span class="ar">${esc(c.nameAr||'')}</span>
+    </button>`).join('');
+  host.querySelectorAll('[data-cat]').forEach(b => b.addEventListener('click', e=>{
+    STATE.activeCat = e.currentTarget.dataset.cat;
+    renderCategories(); renderMenu();
+  }));
+}
+
+function renderMenu(){
+  const host = document.getElementById('menu-grid');
+  const items = STATE.activeCat==='all' ? STATE.menu : STATE.menu.filter(m => m.categoryId===STATE.activeCat);
+  if (!items.length) {
+    host.innerHTML = `<div class="empty-state"><h3>Nothing here yet</h3><p>Check back soon — or pick another category.</p></div>`;
+    return;
+  }
+  const cur = STATE.config.currency;
+  host.innerHTML = items.map(m => `
+    <article class="dish" data-id="${esc(m.id)}">
+      <div class="img">
+        ${m.image ? `<img src="${esc(m.image)}" alt="${esc(m.name)}" loading="lazy" onerror="this.parentElement.style.background='var(--sand-2)';this.style.display='none'">` : ''}
+        ${m.tag ? `<span class="tag">${esc(m.tag)}</span>` : ''}
+      </div>
+      <div class="body">
+        <h3>${esc(m.name)}</h3>
+        <div class="name-ar">${esc(m.nameAr||'')}</div>
+        <p>${esc(m.desc||'')}</p>
+        <div class="foot">
+          <div class="price">${cur}${fmtPrice(m.price)}</div>
+          <button class="add-btn" data-add="${esc(m.id)}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            Add
+          </button>
+        </div>
+      </div>
+    </article>`).join('');
+  host.querySelectorAll('[data-add]').forEach(b => b.addEventListener('click', e=>{
+    addToCart(e.currentTarget.dataset.add);
+  }));
+}
+
+function renderReviews(){
+  const host = document.getElementById('review-grid');
+  host.innerHTML = STATE.reviews.map(r => `
+    <article class="review">
+      <div class="stars">${'★'.repeat(r.stars||5)}${'☆'.repeat(5-(r.stars||5))}</div>
+      <p class="text">${esc(r.text)}</p>
+      <div class="who">
+        <div class="avatar">${esc(r.initials||r.name.slice(0,2).toUpperCase())}</div>
+        <div><b>${esc(r.name)}</b><small>${esc(r.date||'')}</small></div>
+      </div>
+    </article>`).join('');
+}
+
+function renderHours(){
+  const host = document.getElementById('hours-list');
+  const todayIdx = (new Date().getDay()+6)%7;
+  host.innerHTML = STATE.hours.map((h,i)=>`
+    <div class="hours-row ${i===todayIdx?'today':''} ${h.closed?'closed':''}">
+      <div><span class="day">${esc(h.day)}</span><span class="day-ar ar">${esc(h.dayAr||'')}</span></div>
+      <div class="time">${h.closed ? 'Closed' : (esc(h.open)+' – '+esc(h.close))}</div>
+    </div>`).join('');
+}
+
+/* ---------- cart ---------- */
+function addToCart(id){
+  const item = STATE.menu.find(m => m.id===id);
+  if (!item) return;
+  const existing = STATE.cart.find(c => c.id===id);
+  if (existing) existing.qty += 1;
+  else STATE.cart.push({ id:item.id, name:item.name, nameAr:item.nameAr, price:item.price, image:item.image, qty:1 });
+  updateCartUI();
+  toast(`Added ${item.name}`, 'ok');
+}
+function changeQty(id, delta){
+  const i = STATE.cart.find(c => c.id===id);
+  if (!i) return;
+  i.qty += delta;
+  if (i.qty <= 0) STATE.cart = STATE.cart.filter(c => c.id!==id);
+  updateCartUI();
+}
+function cartSubtotal(){ return STATE.cart.reduce((s,c)=>s + c.price*c.qty, 0); }
+
+/* ---- distance-based delivery ---- */
+function normalisePostcode(pc){ return pc ? pc.toString().toUpperCase().replace(/\s+/g,'').trim() : ''; }
+function formatPostcode(pc){
+  const n = normalisePostcode(pc);
+  if (n.length < 5) return n;
+  return n.slice(0, n.length-3) + ' ' + n.slice(n.length-3);
+}
+async function lookupPostcode(pc){
+  const clean = normalisePostcode(pc);
+  if (!clean) throw new Error('Enter a postcode');
+  const r = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(clean)}`);
+  const data = await r.json();
+  if (!data || data.status !== 200) throw new Error('Postcode not found');
+  return { lat: data.result.latitude, lng: data.result.longitude, formatted: data.result.postcode };
+}
+function distanceMiles(a, b){
+  const toRad = d => d * Math.PI/180;
+  const R = 3958.7613;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const sa = Math.sin(dLat/2)**2 + Math.cos(toRad(a.lat))*Math.cos(toRad(b.lat))*Math.sin(dLng/2)**2;
+  return 2 * R * Math.asin(Math.sqrt(sa));
+}
+function quoteForDistance(miles){
+  const c = STATE.config;
+  const tier = Math.max(0, Math.ceil(miles));
+  let fee = (c.baseDeliveryFee||0) + tier * (c.perMileFee||0);
+  const time = (c.baseDeliveryMin||0) + tier * (c.perMileDeliveryMin||0);
+  const sub = cartSubtotal();
+  if ((c.freeDeliveryOver||0) > 0 && sub >= c.freeDeliveryOver) fee = 0;
+  return { fee, time, tier };
+}
+function deliveryFee(){
+  if (!STATE.delivery || !STATE.delivery.valid) return 0;
+  return STATE.delivery.fee;
+}
+function cartTotal(){ return cartSubtotal() + deliveryFee(); }
+
+function updateCartUI(){
+  const count = STATE.cart.reduce((s,c)=>s+c.qty,0);
+  document.getElementById('cart-count').textContent = count;
+  renderDrawer();
+}
+
+function renderDrawer(){
+  const body = document.getElementById('drawer-body');
+  const foot = document.getElementById('drawer-foot');
+  const cur = STATE.config.currency;
+  if (!STATE.cart.length) {
+    body.innerHTML = `
+      <div class="cart-empty">
+        <div style="font-size:48px;margin-bottom:12px">🥘</div>
+        <h4>Your cart is empty</h4>
+        <p>Pick something delicious from the menu.</p>
+      </div>`;
+    foot.innerHTML = '';
+    return;
+  }
+  body.innerHTML = STATE.cart.map(c => `
+    <div class="cart-item">
+      <img src="${esc(c.image||'')}" alt="" onerror="this.style.visibility='hidden'">
+      <div class="info">
+        <b>${esc(c.name)}</b><small>${esc(c.nameAr||'')} · ${cur}${fmtPrice(c.price)}</small>
+        <div class="qty">
+          <button data-dec="${esc(c.id)}">−</button>
+          <span>${c.qty}</span>
+          <button data-inc="${esc(c.id)}">+</button>
+        </div>
+      </div>
+      <div class="price">${cur}${fmtPrice(c.price*c.qty)}</div>
+    </div>`).join('');
+
+  body.querySelectorAll('[data-inc]').forEach(b => b.addEventListener('click', e=>changeQty(e.currentTarget.dataset.inc, +1)));
+  body.querySelectorAll('[data-dec]').forEach(b => b.addEventListener('click', e=>changeQty(e.currentTarget.dataset.dec, -1)));
+
+  const sub = cartSubtotal();
+  const belowMin = sub < (STATE.config.minOrder||0);
+  const del = STATE.delivery && STATE.delivery.valid ? STATE.delivery.fee : null;
+  const tot = sub + (del||0);
+  const d = STATE.delivery;
+  const stripeOn = STATE.serviceStatus.stripe;
+
+  foot.innerHTML = `
+    <div class="summary-row"><span>Subtotal</span><span>${cur}${fmtPrice(sub)}</span></div>
+    <div class="summary-row"><span>Delivery</span><span>${
+      d && d.valid ? (del===0 ? '<b style="color:var(--olive)">Free</b>' : cur+fmtPrice(del))
+                   : '<span style="color:var(--ink-2);font-size:12px">Check postcode below</span>'
+    }</span></div>
+    <div class="summary-row total"><span>Total</span><span>${cur}${fmtPrice(tot)}</span></div>
+    ${belowMin?`<div style="margin-top:10px;padding:10px 12px;border-radius:10px;background:#fff5e5;color:#8a5a00;font-size:13px;font-family:var(--kufi)">Minimum order ${cur}${fmtPrice(STATE.config.minOrder)}. Add ${cur}${fmtPrice((STATE.config.minOrder||0)-sub)} more.</div>`:''}
+    <form class="checkout-form" id="checkout-form">
+      <div><label>Your name</label><input required name="name" placeholder="Full name"/></div>
+      <div><label>Phone</label><input required name="phone" placeholder="07… or +44…"/></div>
+      <div><label>Email ${stripeOn ? '' : '(optional)'}</label><input ${stripeOn?'required':''} name="email" type="email" placeholder="for receipts"/></div>
+      <div>
+        <label>Delivery postcode</label>
+        <div class="pc-row">
+          <input required name="postcode" id="co-postcode" placeholder="e.g. E14 5AB" value="${esc(d?d.postcode:'')}" style="text-transform:uppercase"/>
+          <button type="button" class="adm-btn" id="check-pc" style="background:var(--teal);color:var(--sand);padding:11px 16px;border-radius:var(--r-md)">Check</button>
+        </div>
+        <div id="pc-status"></div>
+      </div>
+      <div><label>Full address</label><textarea required name="address" placeholder="Street, building, floor, door code…"></textarea></div>
+      <div><label>Notes (allergies, no onion, etc.)</label><textarea name="notes" placeholder="Optional"></textarea></div>
+      <button class="btn btn-primary place-order" type="submit" ${(belowMin || !d || !d.valid)?'disabled style="opacity:.5;cursor:not-allowed"':''}>
+        ${(!d || !d.valid) ? 'Check postcode first' : (stripeOn ? `Pay ${cur}${fmtPrice(tot)} →` : `Place order · ${cur}${fmtPrice(tot)}`)}
+      </button>
+      ${stripeOn ? '<small style="display:block;text-align:center;color:var(--ink-2);margin-top:6px;font-size:12px">Secure checkout via Stripe. Card details never touch our servers.</small>' :
+                   '<small style="display:block;text-align:center;color:var(--ink-2);margin-top:6px;font-size:12px">Cash on delivery — pay the rider on arrival.</small>'}
+    </form>`;
+
+  renderPcStatus();
+
+  document.getElementById('checkout-form').addEventListener('submit', placeOrder);
+  document.getElementById('check-pc').addEventListener('click', checkDeliveryPostcode);
+  document.getElementById('co-postcode').addEventListener('input', ()=>{
+    STATE.delivery = null;
+    renderDrawer();
+  });
+}
+
+function renderPcStatus(){
+  const host = document.getElementById('pc-status');
+  if (!host) return;
+  const cur = STATE.config.currency;
+  const d = STATE.delivery;
+  if (!d){ host.innerHTML=''; return; }
+  if (d.loading){ host.innerHTML = `<div class="pc-status loading">Checking ${esc(d.postcode||'')}…</div>`; return; }
+  if (d.error){ host.innerHTML = `<div class="pc-status err"><b>Can't deliver there</b>${esc(d.error)}</div>`; return; }
+  if (d.valid){
+    host.innerHTML = `
+      <div class="pc-status ok">
+        <b>✓ We deliver to ${esc(d.postcode)}</b>
+        Distance: ${d.miles.toFixed(1)} mi from ${esc(STATE.config.basePostcode)} ·
+        ${d.fee===0 ? 'Free delivery' : `${cur}${fmtPrice(d.fee)}`} ·
+        ~${d.time} min
+      </div>`;
+  }
+}
+
+async function checkDeliveryPostcode(){
+  const input = document.getElementById('co-postcode');
+  const raw = input.value;
+  STATE.delivery = { postcode: formatPostcode(raw), loading:true };
+  renderPcStatus();
+  try {
+    const dest = await lookupPostcode(raw);
+    const origin = await lookupPostcode(STATE.config.basePostcode);
+    const miles = distanceMiles(origin, dest);
+    if (miles > (STATE.config.maxRadiusMiles||5)) {
+      STATE.delivery = {
+        postcode: dest.formatted, loading:false, valid:false,
+        error: `That's ${miles.toFixed(1)} miles from ${STATE.config.basePostcode}. We only deliver within ${STATE.config.maxRadiusMiles} miles of central London.`,
+      };
+    } else {
+      const q = quoteForDistance(miles);
+      STATE.delivery = {
+        postcode: dest.formatted, loading:false, valid:true,
+        lat:dest.lat, lng:dest.lng, miles, fee:q.fee, time:q.time, tier:q.tier,
+      };
+    }
+  } catch(e){
+    STATE.delivery = { postcode: formatPostcode(raw), loading:false, valid:false, error: e.message };
+  }
+  renderDrawer();
+}
+
+/* ---------- place order ---------- */
+async function placeOrder(e){
+  e.preventDefault();
+  if (!STATE.delivery || !STATE.delivery.valid) return toast('Check your postcode first', 'err');
+
+  const f = new FormData(e.target);
+  const customer = {
+    name: f.get('name').trim(),
+    phone: f.get('phone').trim(),
+    email: (f.get('email')||'').trim(),
+    postcode: STATE.delivery.postcode,
+    address: f.get('address').trim(),
+    notes: (f.get('notes')||'').trim(),
+  };
+  const items = STATE.cart.map(c => ({ id:c.id, qty:c.qty }));
+
+  const btn = e.target.querySelector('button[type=submit]');
+  const originalText = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Sending…';
+
+  try {
+    const result = await api(API.checkout, { method:'POST', body:{ items, customer } });
+    if (result.mode === 'stripe' && result.url) {
+      // off to Stripe
+      window.location.href = result.url;
+    } else if (result.mode === 'cod') {
+      toast(`Order ${result.orderId} placed!`, 'ok');
+      STATE.cart = []; STATE.delivery = null;
+      updateCartUI(); closeDrawer();
+      alert(`Thank you! Your order ${result.orderId} is on the way. We'll contact you on ${customer.phone}.`);
+    } else {
+      toast('Unexpected response from server', 'err');
+    }
+  } catch (err) {
+    toast('Order failed: ' + err.message, 'err');
+    btn.disabled = false; btn.textContent = originalText;
+  }
+}
+
+/* ---------- drawer / nav ---------- */
+function openDrawer(){ document.getElementById('drawer').classList.add('open'); document.getElementById('drawer-back').classList.add('open'); }
+function closeDrawer(){ document.getElementById('drawer').classList.remove('open'); document.getElementById('drawer-back').classList.remove('open'); }
+document.getElementById('open-cart').addEventListener('click', openDrawer);
+document.getElementById('close-cart').addEventListener('click', closeDrawer);
+document.getElementById('drawer-back').addEventListener('click', closeDrawer);
+
+const mobMenu = document.getElementById('mobile-menu');
+document.getElementById('mobile-toggle').addEventListener('click', ()=>mobMenu.classList.toggle('open'));
+document.querySelectorAll('[data-close-mob]').forEach(a => a.addEventListener('click', ()=>mobMenu.classList.remove('open')));
+
+/* contact form */
+document.getElementById('contact-form').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const f = new FormData(e.target);
+  try {
+    await api(API.contact, { method:'POST', body:{ name:f.get('name'), contact:f.get('contact'), message:f.get('message') } });
+    toast("Message sent — we'll be in touch!", 'ok');
+    e.target.reset();
+  } catch (err) {
+    toast('Could not send: ' + err.message, 'err');
+  }
+});
+
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+function renderAdmin(){
+  const host = document.getElementById('admin-wrap');
+  if (!STATE.adminAuthed) {
+    host.innerHTML = `
+      <div class="login-card">
+        <h2>الإدارة</h2>
+        <p>Admin sign-in. Your password is set in the <code>ADMIN_PASSWORD</code> environment variable on Vercel.</p>
+        <div class="adm-field" style="margin-bottom:14px">
+          <label>Password</label>
+          <input type="password" id="login-pw" placeholder="Enter password" autofocus/>
+        </div>
+        <button class="adm-btn" id="login-btn" style="width:100%">Sign in</button>
+        <p class="muted" style="margin-top:18px;font-size:12px">Forgot? Change <code>ADMIN_PASSWORD</code> in your Vercel project settings, then redeploy.</p>
+      </div>`;
+    document.getElementById('login-btn').addEventListener('click', tryLogin);
+    document.getElementById('login-pw').addEventListener('keydown', e=>{ if(e.key==='Enter') tryLogin(); });
+    return;
+  }
+
+  host.innerHTML = `
+    <div class="tabs">
+      <button class="tab active" data-panel="restaurant">Restaurant</button>
+      <button class="tab" data-panel="delivery">Delivery</button>
+      <button class="tab" data-panel="categories">Categories</button>
+      <button class="tab" data-panel="menu">Menu items</button>
+      <button class="tab" data-panel="gallery">Gallery</button>
+      <button class="tab" data-panel="reviews">Reviews</button>
+      <button class="tab" data-panel="hours">Hours</button>
+      <button class="tab" data-panel="contact">Contact</button>
+      <button class="tab" data-panel="services">Services</button>
+    </div>
+    <div id="panel-restaurant" class="panel active"></div>
+    <div id="panel-delivery" class="panel"></div>
+    <div id="panel-categories" class="panel"></div>
+    <div id="panel-menu" class="panel"></div>
+    <div id="panel-gallery" class="panel"></div>
+    <div id="panel-reviews" class="panel"></div>
+    <div id="panel-hours" class="panel"></div>
+    <div id="panel-contact" class="panel"></div>
+    <div id="panel-services" class="panel"></div>`;
+
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', e=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    e.currentTarget.classList.add('active');
+    document.getElementById('panel-'+e.currentTarget.dataset.panel).classList.add('active');
+  }));
+
+  renderRestaurantPanel();
+  renderDeliveryPanel();
+  renderCategoriesPanel();
+  renderMenuPanel();
+  renderGalleryPanel();
+  renderReviewsPanel();
+  renderHoursPanel();
+  renderContactPanel();
+  renderServicesPanel();
+}
+
+async function tryLogin(){
+  const pw = document.getElementById('login-pw').value;
+  try {
+    const r = await api(API.adminLogin, { method:'POST', body:{ password: pw } });
+    setToken(r.token);
+    STATE.adminAuthed = true;
+    renderAdmin();
+    toast('Welcome back', 'ok');
+  } catch (e) {
+    toast(e.message, 'err');
+  }
+}
+document.getElementById('admin-logout').addEventListener('click', ()=>{
+  clearToken();
+  STATE.adminAuthed = false;
+  location.hash = 'admin';
+  renderAdmin();
+});
+
+/* ---------- RESTAURANT PANEL ---------- */
+function renderRestaurantPanel(){
+  const c = STATE.config;
+  document.getElementById('panel-restaurant').innerHTML = `
+    <h2>Restaurant identity</h2>
+    <p class="sub">The name and tagline customers see in the header and hero.</p>
+    <div class="card">
+      <h3>Brand</h3>
+      <div class="row">
+        <div class="adm-field"><label>Brand name</label><input id="f-brand" value="${esc(c.brandName)}"/></div>
+        <div class="adm-field"><label>Arabic name</label><input id="f-brand-ar" value="${esc(c.brandAr)}" style="direction:rtl"/></div>
+      </div>
+      <div class="row full">
+        <div class="adm-field"><label>Tagline (under hero headline)</label><textarea id="f-tagline">${esc(c.tagline)}</textarea></div>
+      </div>
+    </div>
+    <button class="adm-btn" id="save-restaurant">Save changes</button>
+  `;
+  document.getElementById('save-restaurant').addEventListener('click', async ()=>{
+    STATE.config = {...STATE.config,
+      brandName: val('f-brand'),
+      brandAr: val('f-brand-ar'),
+      tagline: val('f-tagline'),
+    };
+    try { await saveServer('config', STATE.config); toast('Saved','ok'); }
+    catch (e) { toast(e.message, 'err'); }
+  });
+}
+
+/* ---------- DELIVERY PANEL ---------- */
+function renderDeliveryPanel(){
+  const c = STATE.config;
+  document.getElementById('panel-delivery').innerHTML = `
+    <h2>Delivery rules</h2>
+    <p class="sub">Distance is calculated from your base postcode to the customer's postcode using free UK postcode data.</p>
+    <div class="help-box">
+      <b>How pricing works:</b><br>
+      Distance from <b>${esc(c.basePostcode)}</b> is rounded up to the next whole mile.<br>
+      <b>Fee</b> = base fee + (miles × per-mile fee). <b>Time</b> = base time + (miles × per-mile time).
+    </div>
+    <div class="card">
+      <h3>Base location</h3>
+      <div class="row">
+        <div class="adm-field"><label>Base postcode</label><input id="d-postcode" value="${esc(c.basePostcode)}" placeholder="E3 4TN"/></div>
+        <div class="adm-field"><label>Currency symbol</label><input id="d-currency" value="${esc(c.currency)}"/></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Delivery fee</h3>
+      <div class="row three">
+        <div class="adm-field"><label>Base fee (at 0 miles)</label><input id="d-basefee" type="number" step="0.01" value="${c.baseDeliveryFee}"/></div>
+        <div class="adm-field"><label>Added per mile</label><input id="d-perfee" type="number" step="0.01" value="${c.perMileFee}"/></div>
+        <div class="adm-field"><label>Free delivery over (0 = off)</label><input id="d-free" type="number" step="1" value="${c.freeDeliveryOver}"/></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Delivery time</h3>
+      <div class="row">
+        <div class="adm-field"><label>Base time (minutes)</label><input id="d-basetime" type="number" step="1" value="${c.baseDeliveryMin}"/></div>
+        <div class="adm-field"><label>Added per mile (minutes)</label><input id="d-pertime" type="number" step="1" value="${c.perMileDeliveryMin}"/></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Coverage area</h3>
+      <div class="row">
+        <div class="adm-field"><label>Max delivery radius (miles)</label><input id="d-radius" type="number" step="0.5" value="${c.maxRadiusMiles}"/></div>
+        <div class="adm-field"><label>Minimum order</label><input id="d-min" type="number" step="1" value="${c.minOrder}"/></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Test a postcode</h3>
+      <p class="muted" style="margin-bottom:10px">Try a customer's postcode with your current (unsaved) settings.</p>
+      <div class="row">
+        <div class="adm-field"><label>Test postcode</label><input id="d-test" placeholder="e.g. SW1A 1AA"/></div>
+        <div style="display:flex;align-items:end"><button class="adm-btn" id="d-test-btn">Run test</button></div>
+      </div>
+      <div id="d-test-out" style="margin-top:12px"></div>
+    </div>
+    <button class="adm-btn" id="save-delivery">Save delivery rules</button>
+  `;
+  document.getElementById('save-delivery').addEventListener('click', async ()=>{
+    STATE.config = {...STATE.config,
+      basePostcode: val('d-postcode').trim().toUpperCase(),
+      currency: val('d-currency'),
+      baseDeliveryFee: +val('d-basefee'),
+      perMileFee: +val('d-perfee'),
+      baseDeliveryMin: +val('d-basetime'),
+      perMileDeliveryMin: +val('d-pertime'),
+      maxRadiusMiles: +val('d-radius'),
+      minOrder: +val('d-min'),
+      freeDeliveryOver: +val('d-free'),
+    };
+    try { await saveServer('config', STATE.config); toast('Delivery rules saved','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+  document.getElementById('d-test-btn').addEventListener('click', async ()=>{
+    const out = document.getElementById('d-test-out');
+    out.innerHTML = '<div class="pc-status loading">Looking up…</div>';
+    try {
+      const tempCfg = {
+        basePostcode: val('d-postcode').trim().toUpperCase(),
+        baseDeliveryFee: +val('d-basefee'),
+        perMileFee: +val('d-perfee'),
+        baseDeliveryMin: +val('d-basetime'),
+        perMileDeliveryMin: +val('d-pertime'),
+        maxRadiusMiles: +val('d-radius'),
+        freeDeliveryOver: +val('d-free'),
+        currency: val('d-currency'),
+      };
+      const dest = await lookupPostcode(val('d-test'));
+      const origin = await lookupPostcode(tempCfg.basePostcode);
+      const miles = distanceMiles(origin, dest);
+      if (miles > tempCfg.maxRadiusMiles) {
+        out.innerHTML = `<div class="pc-status err"><b>Out of range</b>${dest.formatted} is ${miles.toFixed(1)} mi from ${tempCfg.basePostcode} (max ${tempCfg.maxRadiusMiles} mi).</div>`;
+        return;
+      }
+      const tier = Math.max(0, Math.ceil(miles));
+      const fee = tempCfg.baseDeliveryFee + tier * tempCfg.perMileFee;
+      const time = tempCfg.baseDeliveryMin + tier * tempCfg.perMileDeliveryMin;
+      out.innerHTML = `
+        <div class="pc-status ok">
+          <b>✓ ${esc(dest.formatted)} — ${miles.toFixed(2)} miles away</b>
+          Tier: ${tier} mile${tier===1?'':'s'} · Fee: ${esc(tempCfg.currency)}${fmtPrice(fee)} · ETA: ~${time} min
+        </div>`;
+    } catch(e){
+      out.innerHTML = `<div class="pc-status err">${esc(e.message)}</div>`;
+    }
+  });
+}
+
+/* ---------- CATEGORIES ---------- */
+function renderCategoriesPanel(){
+  const host = document.getElementById('panel-categories');
+  host.innerHTML = `
+    <h2>Categories</h2>
+    <p class="sub">Group your menu (e.g. Mezze, Shawarma, Sweets). Customers tap these to filter.</p>
+    <div class="card">
+      <h3>Add a new category</h3>
+      <div class="row three">
+        <div class="adm-field"><label>Name (English)</label><input id="nc-name" placeholder="e.g. Mezze"/></div>
+        <div class="adm-field"><label>Name (Arabic)</label><input id="nc-ar" placeholder="مقبّلات" style="direction:rtl"/></div>
+        <div class="adm-field"><label>Icon (emoji, optional)</label><input id="nc-icon" placeholder="🥗"/></div>
+      </div>
+      <button class="adm-btn" id="add-cat">Add category</button>
+    </div>
+    <div class="card"><h3>Existing categories</h3><div id="cat-list"></div></div>`;
+  drawCatList();
+  document.getElementById('add-cat').addEventListener('click', async ()=>{
+    const name = val('nc-name').trim();
+    if (!name) return toast('Name required','err');
+    STATE.categories.push({ id:'c'+Date.now(), name, nameAr:val('nc-ar').trim(), icon:val('nc-icon').trim() });
+    try { await saveServer('categories', STATE.categories); ['nc-name','nc-ar','nc-icon'].forEach(i=>document.getElementById(i).value=''); drawCatList(); toast('Category added','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+}
+function drawCatList(){
+  const host = document.getElementById('cat-list');
+  if (!STATE.categories.length) { host.innerHTML='<p class="muted">No categories yet.</p>'; return; }
+  host.innerHTML = STATE.categories.map(c => `
+    <div class="item-row" style="grid-template-columns:48px 1fr auto auto">
+      <div style="font-size:28px;text-align:center">${esc(c.icon||'•')}</div>
+      <div class="meta">
+        <b id="cn-${c.id}" contenteditable="true">${esc(c.name)}</b>
+        <small><span id="ca-${c.id}" contenteditable="true" style="direction:rtl">${esc(c.nameAr||'')}</span></small>
+      </div>
+      <button class="adm-btn sm" data-save="${esc(c.id)}">Save</button>
+      <button class="adm-btn sm danger" data-del="${esc(c.id)}">Delete</button>
+    </div>`).join('');
+  host.querySelectorAll('[data-save]').forEach(b=>b.addEventListener('click', async e=>{
+    const id = e.currentTarget.dataset.save;
+    const c = STATE.categories.find(x=>x.id===id);
+    c.name = document.getElementById('cn-'+id).innerText.trim();
+    c.nameAr = document.getElementById('ca-'+id).innerText.trim();
+    try { await saveServer('categories', STATE.categories); toast('Saved','ok'); }
+    catch(err){ toast(err.message,'err'); }
+  }));
+  host.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click', async e=>{
+    const id = e.currentTarget.dataset.del;
+    if (!confirm('Delete this category? Menu items in it will be orphaned.')) return;
+    STATE.categories = STATE.categories.filter(x=>x.id!==id);
+    try { await saveServer('categories', STATE.categories); drawCatList(); toast('Deleted','ok'); }
+    catch(err){ toast(err.message,'err'); }
+  }));
+}
+
+/* ---------- MENU ITEMS ---------- */
+function renderMenuPanel(){
+  const host = document.getElementById('panel-menu');
+  host.innerHTML = `
+    <h2>Menu items</h2>
+    <p class="sub">Add, edit, or remove dishes. Use any direct image URL (Unsplash, Cloudinary, your host, etc.).</p>
+    <div class="card">
+      <h3>Add a new item</h3>
+      <div class="row">
+        <div class="adm-field"><label>Name (English)</label><input id="ni-name" placeholder="e.g. Chicken shawarma wrap"/></div>
+        <div class="adm-field"><label>Name (Arabic)</label><input id="ni-ar" placeholder="شاورما دجاج" style="direction:rtl"/></div>
+      </div>
+      <div class="row">
+        <div class="adm-field"><label>Category</label>
+          <select id="ni-cat">${STATE.categories.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('')}</select>
+        </div>
+        <div class="adm-field"><label>Price</label><input id="ni-price" type="number" step="0.10" placeholder="8.50"/></div>
+      </div>
+      <div class="row full"><div class="adm-field"><label>Description</label><textarea id="ni-desc"></textarea></div></div>
+      <div class="row">
+        <div class="adm-field"><label>Image URL</label><input id="ni-img" placeholder="https://…"/></div>
+        <div class="adm-field"><label>Badge (e.g. "Bestseller", "Vegan")</label><input id="ni-tag"/></div>
+      </div>
+      <button class="adm-btn" id="add-item">Add item</button>
+    </div>
+    <div class="card"><h3>Current menu</h3><div id="item-list"></div></div>`;
+  drawItemList();
+  document.getElementById('add-item').addEventListener('click', async ()=>{
+    const name = val('ni-name').trim();
+    const price = parseFloat(val('ni-price'));
+    if (!name) return toast('Name required','err');
+    if (isNaN(price)) return toast('Valid price required','err');
+    STATE.menu.push({
+      id:'m'+Date.now(), name, nameAr:val('ni-ar').trim(),
+      categoryId: val('ni-cat'),
+      price, desc: val('ni-desc').trim(), image: val('ni-img').trim(), tag: val('ni-tag').trim(),
+    });
+    try { await saveServer('menu', STATE.menu); ['ni-name','ni-ar','ni-price','ni-desc','ni-img','ni-tag'].forEach(i=>document.getElementById(i).value=''); drawItemList(); toast('Item added','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+}
+function drawItemList(){
+  const host = document.getElementById('item-list');
+  if (!STATE.menu.length){ host.innerHTML='<p class="muted">No items yet.</p>'; return; }
+  const cur = STATE.config.currency;
+  host.innerHTML = STATE.menu.map(m=>{
+    const cat = STATE.categories.find(c=>c.id===m.categoryId);
+    return `
+    <div class="item-row" id="row-${esc(m.id)}">
+      <img src="${esc(m.image||'')}" onerror="this.style.visibility='hidden'">
+      <div class="meta">
+        <b>${esc(m.name)}</b>
+        <small>${esc(m.nameAr||'')} · ${esc(cat?cat.name:'(no category)')}${m.tag?' · '+esc(m.tag):''}</small>
+        <span class="price-tag">${esc(cur)}${fmtPrice(m.price)}</span>
+      </div>
+      <button class="adm-btn sm" data-edit="${esc(m.id)}">Edit</button>
+      <button class="adm-btn sm danger" data-delm="${esc(m.id)}">Delete</button>
+    </div>`;
+  }).join('');
+  host.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click', e=>editItem(e.currentTarget.dataset.edit)));
+  host.querySelectorAll('[data-delm]').forEach(b=>b.addEventListener('click', async e=>{
+    if (!confirm('Delete this item?')) return;
+    STATE.menu = STATE.menu.filter(m=>m.id!==e.currentTarget.dataset.delm);
+    try { await saveServer('menu', STATE.menu); drawItemList(); toast('Deleted','ok'); }
+    catch(err){ toast(err.message,'err'); }
+  }));
+}
+function editItem(id){
+  const m = STATE.menu.find(x=>x.id===id); if(!m) return;
+  const row = document.getElementById('row-'+id);
+  row.outerHTML = `
+    <div class="card" id="row-${esc(id)}" style="background:#0f1f1e">
+      <h3>Editing: ${esc(m.name)}</h3>
+      <div class="row">
+        <div class="adm-field"><label>Name</label><input id="e-name-${id}" value="${esc(m.name)}"/></div>
+        <div class="adm-field"><label>Arabic</label><input id="e-ar-${id}" value="${esc(m.nameAr||'')}" style="direction:rtl"/></div>
+      </div>
+      <div class="row">
+        <div class="adm-field"><label>Category</label>
+          <select id="e-cat-${id}">${STATE.categories.map(c=>`<option value="${esc(c.id)}" ${c.id===m.categoryId?'selected':''}>${esc(c.name)}</option>`).join('')}</select>
+        </div>
+        <div class="adm-field"><label>Price</label><input id="e-price-${id}" type="number" step="0.10" value="${m.price}"/></div>
+      </div>
+      <div class="row full"><div class="adm-field"><label>Description</label><textarea id="e-desc-${id}">${esc(m.desc||'')}</textarea></div></div>
+      <div class="row">
+        <div class="adm-field"><label>Image URL</label><input id="e-img-${id}" value="${esc(m.image||'')}"/></div>
+        <div class="adm-field"><label>Badge</label><input id="e-tag-${id}" value="${esc(m.tag||'')}"/></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="adm-btn" data-savem="${esc(id)}">Save</button>
+        <button class="adm-btn ghost" data-cancelm="${esc(id)}">Cancel</button>
+      </div>
+    </div>`;
+  document.querySelector('[data-savem="'+id+'"]').addEventListener('click', async ()=>{
+    m.name = val('e-name-'+id);
+    m.nameAr = val('e-ar-'+id);
+    m.categoryId = val('e-cat-'+id);
+    m.price = parseFloat(val('e-price-'+id));
+    m.desc = val('e-desc-'+id);
+    m.image = val('e-img-'+id);
+    m.tag = val('e-tag-'+id);
+    try { await saveServer('menu', STATE.menu); drawItemList(); toast('Saved','ok'); }
+    catch(err){ toast(err.message,'err'); }
+  });
+  document.querySelector('[data-cancelm="'+id+'"]').addEventListener('click', drawItemList);
+}
+
+/* ---------- GALLERY ADMIN ---------- */
+function renderGalleryPanel(){
+  const host = document.getElementById('panel-gallery');
+  host.innerHTML = `
+    <h2>Photo gallery</h2>
+    <p class="sub">These appear in the "From the kitchen" section. Use any direct image URL.</p>
+    <div class="card">
+      <h3>Add a photo</h3>
+      <div class="row">
+        <div class="adm-field"><label>Image URL</label><input id="ng-img" placeholder="https://…"/></div>
+        <div class="adm-field"><label>Size</label>
+          <select id="ng-size">
+            <option value="normal">Normal (1×1)</option>
+            <option value="wide">Wide (2×1)</option>
+            <option value="tall">Tall (1×2)</option>
+          </select>
+        </div>
+      </div>
+      <div class="row full"><div class="adm-field"><label>Caption (optional)</label><input id="ng-cap" placeholder="e.g. Lamb on the charcoal"/></div></div>
+      <button class="adm-btn" id="add-photo">Add photo</button>
+    </div>
+    <div class="card"><h3>Current photos</h3><div id="gal-list"></div></div>`;
+  drawGalleryList();
+  document.getElementById('add-photo').addEventListener('click', async ()=>{
+    const image = val('ng-img').trim();
+    if (!image) return toast('Image URL required','err');
+    STATE.gallery.push({ id:'g'+Date.now(), image, caption: val('ng-cap').trim(), size: val('ng-size') });
+    try { await saveServer('gallery', STATE.gallery); document.getElementById('ng-img').value=''; document.getElementById('ng-cap').value=''; drawGalleryList(); toast('Photo added','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+}
+function drawGalleryList(){
+  const host = document.getElementById('gal-list');
+  if (!STATE.gallery.length){ host.innerHTML='<p class="muted">No photos yet.</p>'; return; }
+  host.innerHTML = STATE.gallery.map((g,i)=>`
+    <div class="item-row" id="grow-${esc(g.id)}" style="grid-template-columns:72px 1fr auto auto">
+      <img src="${esc(g.image)}" onerror="this.style.visibility='hidden'">
+      <div class="meta">
+        <b>${esc(g.caption||'(no caption)')}</b>
+        <small>Size: ${esc(g.size||'normal')} · Position ${i+1}</small>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <button class="adm-btn sm ghost" data-up="${esc(g.id)}" ${i===0?'disabled style="opacity:.4;cursor:not-allowed"':''}>↑</button>
+        <button class="adm-btn sm ghost" data-down="${esc(g.id)}" ${i===STATE.gallery.length-1?'disabled style="opacity:.4;cursor:not-allowed"':''}>↓</button>
+      </div>
+      <button class="adm-btn sm danger" data-delg="${esc(g.id)}">Delete</button>
+    </div>`).join('');
+  host.querySelectorAll('[data-up]').forEach(b=>b.addEventListener('click', async e=>{
+    const id = e.currentTarget.dataset.up;
+    const i = STATE.gallery.findIndex(g=>g.id===id);
+    if (i>0){ [STATE.gallery[i-1],STATE.gallery[i]] = [STATE.gallery[i],STATE.gallery[i-1]]; try{ await saveServer('gallery', STATE.gallery); drawGalleryList(); } catch(err){ toast(err.message,'err'); } }
+  }));
+  host.querySelectorAll('[data-down]').forEach(b=>b.addEventListener('click', async e=>{
+    const id = e.currentTarget.dataset.down;
+    const i = STATE.gallery.findIndex(g=>g.id===id);
+    if (i<STATE.gallery.length-1){ [STATE.gallery[i+1],STATE.gallery[i]] = [STATE.gallery[i],STATE.gallery[i+1]]; try{ await saveServer('gallery', STATE.gallery); drawGalleryList(); } catch(err){ toast(err.message,'err'); } }
+  }));
+  host.querySelectorAll('[data-delg]').forEach(b=>b.addEventListener('click', async e=>{
+    if (!confirm('Delete this photo?')) return;
+    STATE.gallery = STATE.gallery.filter(g=>g.id!==e.currentTarget.dataset.delg);
+    try { await saveServer('gallery', STATE.gallery); drawGalleryList(); toast('Deleted','ok'); }
+    catch(err){ toast(err.message,'err'); }
+  }));
+}
+
+/* ---------- REVIEWS ---------- */
+function renderReviewsPanel(){
+  const host = document.getElementById('panel-reviews');
+  host.innerHTML = `
+    <h2>Google reviews</h2>
+    <p class="sub">These appear in the "Five stars, served warm" section.</p>
+    <div class="card">
+      <h3>Add a review</h3>
+      <div class="row three">
+        <div class="adm-field"><label>Name</label><input id="nr-name" placeholder="e.g. Yousef A."/></div>
+        <div class="adm-field"><label>Initials (avatar)</label><input id="nr-init" maxlength="3" placeholder="YA"/></div>
+        <div class="adm-field"><label>Stars (1–5)</label><input id="nr-stars" type="number" min="1" max="5" value="5"/></div>
+      </div>
+      <div class="row full"><div class="adm-field"><label>Review text</label><textarea id="nr-text"></textarea></div></div>
+      <div class="row"><div class="adm-field"><label>Date label</label><input id="nr-date" placeholder="e.g. 2 weeks ago"/></div></div>
+      <button class="adm-btn" id="add-rev">Add review</button>
+    </div>
+    <div class="card"><h3>Current reviews</h3><div id="rev-list"></div></div>`;
+  drawRevList();
+  document.getElementById('add-rev').addEventListener('click', async ()=>{
+    const name = val('nr-name').trim(); const text = val('nr-text').trim();
+    if (!name||!text) return toast('Name and text required','err');
+    STATE.reviews.unshift({ id:'r'+Date.now(), name, initials: val('nr-init').trim() || name.slice(0,2).toUpperCase(), stars: Math.max(1,Math.min(5,parseInt(val('nr-stars'))||5)), text, date: val('nr-date').trim() || 'recently' });
+    try { await saveServer('reviews', STATE.reviews); ['nr-name','nr-init','nr-text','nr-date'].forEach(i=>document.getElementById(i).value=''); document.getElementById('nr-stars').value='5'; drawRevList(); toast('Review added','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+}
+function drawRevList(){
+  const host = document.getElementById('rev-list');
+  if (!STATE.reviews.length){ host.innerHTML='<p class="muted">No reviews yet.</p>'; return; }
+  host.innerHTML = STATE.reviews.map(r=>`
+    <div class="item-row" style="grid-template-columns:48px 1fr auto">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--saffron);color:var(--teal-2);display:grid;place-items:center;font-family:var(--display);font-weight:700">${esc(r.initials)}</div>
+      <div class="meta">
+        <b>${esc(r.name)} <span style="color:var(--saffron)">${'★'.repeat(r.stars)}</span></b>
+        <small>${esc(r.text)}</small>
+        <small style="color:rgba(247,241,229,.4);margin-top:4px">${esc(r.date||'')}</small>
+      </div>
+      <button class="adm-btn sm danger" data-delr="${esc(r.id)}">Delete</button>
+    </div>`).join('');
+  host.querySelectorAll('[data-delr]').forEach(b=>b.addEventListener('click', async e=>{
+    STATE.reviews = STATE.reviews.filter(r=>r.id!==e.currentTarget.dataset.delr);
+    try { await saveServer('reviews', STATE.reviews); drawRevList(); toast('Deleted','ok'); }
+    catch(err){ toast(err.message,'err'); }
+  }));
+}
+
+/* ---------- HOURS ---------- */
+function renderHoursPanel(){
+  const host = document.getElementById('panel-hours');
+  host.innerHTML = `
+    <h2>Opening hours</h2>
+    <p class="sub">Use 24h format (e.g. <code>11:30</code>, <code>22:30</code>). Toggle "Closed" for rest days.</p>
+    <div class="card" id="hours-card"></div>
+    <button class="adm-btn" id="save-hours">Save hours</button>
+    <div class="card" style="margin-top:20px">
+      <h3>Hours note</h3>
+      <div class="adm-field"><label>Note shown next to the schedule</label><textarea id="hn-note">${esc(STATE.config.hoursNote)}</textarea></div>
+      <button class="adm-btn" id="save-hn">Save note</button>
+    </div>`;
+  drawHoursEditor();
+  document.getElementById('save-hours').addEventListener('click', async ()=>{
+    STATE.hours.forEach((h,i)=>{
+      h.open = document.getElementById(`ho-${i}`).value;
+      h.close = document.getElementById(`hc-${i}`).value;
+      h.closed = document.getElementById(`hx-${i}`).checked;
+    });
+    try { await saveServer('hours', STATE.hours); toast('Hours saved','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+  document.getElementById('save-hn').addEventListener('click', async ()=>{
+    STATE.config.hoursNote = val('hn-note');
+    try { await saveServer('config', STATE.config); toast('Saved','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+}
+function drawHoursEditor(){
+  document.getElementById('hours-card').innerHTML = STATE.hours.map((h,i)=>`
+    <div style="display:grid;grid-template-columns:140px 1fr 1fr 100px;gap:12px;align-items:end;padding:10px 0;border-bottom:1px solid rgba(212,162,76,.12)">
+      <div><b style="font-family:var(--kufi)">${esc(h.day)}</b><br><small style="color:rgba(247,241,229,.5)" class="ar">${esc(h.dayAr)}</small></div>
+      <div class="adm-field"><label>Open</label><input id="ho-${i}" type="time" value="${esc(h.open)}"/></div>
+      <div class="adm-field"><label>Close</label><input id="hc-${i}" type="time" value="${esc(h.close)}"/></div>
+      <div class="adm-field"><label>Closed?</label><input id="hx-${i}" type="checkbox" ${h.closed?'checked':''} style="width:22px;height:22px"/></div>
+    </div>`).join('');
+}
+
+/* ---------- CONTACT INFO ---------- */
+function renderContactPanel(){
+  const c = STATE.config;
+  document.getElementById('panel-contact').innerHTML = `
+    <h2>Contact & social</h2>
+    <p class="sub">Powers the WhatsApp, Telegram, and email cards on the contact section.</p>
+    <div class="card">
+      <h3>Contact channels</h3>
+      <div class="row">
+        <div class="adm-field"><label>WhatsApp number (digits only)</label><input id="ct-wa" value="${esc(c.whatsappNumber)}" placeholder="447712345678"/></div>
+        <div class="adm-field"><label>Public Telegram username (no @)</label><input id="ct-tg" value="${esc(c.telegramUsername)}" placeholder="karam_orders"/></div>
+      </div>
+      <div class="row">
+        <div class="adm-field"><label>Email</label><input id="ct-em" value="${esc(c.email)}" placeholder="hello@…"/></div>
+      </div>
+      <button class="adm-btn" id="save-contact">Save</button>
+    </div>`;
+  document.getElementById('save-contact').addEventListener('click', async ()=>{
+    STATE.config.whatsappNumber = val('ct-wa').replace(/\D/g,'');
+    STATE.config.telegramUsername = val('ct-tg').replace(/^@/,'');
+    STATE.config.email = val('ct-em');
+    try { await saveServer('config', STATE.config); toast('Saved','ok'); }
+    catch(e){ toast(e.message,'err'); }
+  });
+}
+
+/* ---------- SERVICES STATUS (Telegram + Stripe) ---------- */
+function renderServicesPanel(){
+  const s = STATE.serviceStatus;
+  document.getElementById('panel-services').innerHTML = `
+    <h2>External services</h2>
+    <p class="sub">Status of your connected services. Credentials are set as <b>Vercel environment variables</b>, not here.</p>
+
+    <div class="card">
+      <h3>Telegram bot</h3>
+      <p style="margin:0 0 10px;color:${s.telegram?'var(--olive)':'var(--pomegranate)'};font-family:var(--kufi);font-weight:600">
+        ${s.telegram ? '✓ Configured — orders will be delivered to your bot' : '✗ Not configured'}
+      </p>
+      <div class="help-box">
+        <b>Required env vars:</b> <code>TELEGRAM_BOT_TOKEN</code>, <code>TELEGRAM_CHAT_ID</code><br>
+        Get your bot token from <code>@BotFather</code>, then find your chat ID at <code>https://api.telegram.org/bot&lt;TOKEN&gt;/getUpdates</code> after messaging your bot.
+      </div>
+      <button class="adm-btn" id="test-tg-btn" ${s.telegram?'':'disabled style="opacity:.5"'}>Send test message</button>
+    </div>
+
+    <div class="card">
+      <h3>Stripe payments</h3>
+      <p style="margin:0 0 10px;color:${s.stripe?'var(--olive)':'var(--saffron-2)'};font-family:var(--kufi);font-weight:600">
+        ${s.stripe ? '✓ Configured — checkout uses Stripe' : '⚠ Not configured — running in cash-on-delivery mode'}
+      </p>
+      <div class="help-box">
+        <b>Required env vars:</b> <code>STRIPE_SECRET_KEY</code>, <code>STRIPE_PUBLISHABLE_KEY</code>, <code>STRIPE_WEBHOOK_SECRET</code><br>
+        Get your keys from <a href="https://dashboard.stripe.com/apikeys" target="_blank" rel="noopener" style="color:var(--saffron)">dashboard.stripe.com/apikeys</a>. Then add a webhook endpoint at <code>https://&lt;your-domain&gt;/api/stripe-webhook</code> listening for <code>checkout.session.completed</code>, and paste the signing secret as <code>STRIPE_WEBHOOK_SECRET</code>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Reset all data</h3>
+      <p class="muted">Restores menu, categories, hours, reviews, and gallery to defaults. Brand, delivery rules, and contact info also reset. Your env-var credentials (Stripe, Telegram, admin password) are not touched.</p>
+      <button class="adm-btn danger" id="reset-data">Reset to demo data</button>
+    </div>
+  `;
+  const testBtn = document.getElementById('test-tg-btn');
+  if (testBtn && s.telegram) testBtn.addEventListener('click', async ()=>{
+    testBtn.disabled = true; testBtn.textContent = 'Sending…';
+    try { const r = await api(API.adminTestTelegram, { method:'POST', auth:true }); toast(r.ok?'Test sent — check Telegram':'Failed: '+r.error, r.ok?'ok':'err'); }
+    catch(e){ toast(e.message,'err'); }
+    testBtn.disabled = false; testBtn.textContent = 'Send test message';
+  });
+  document.getElementById('reset-data').addEventListener('click', async ()=>{
+    if (!confirm('Reset all menu/category/review/hours/gallery data to defaults?')) return;
+    try {
+      await api(API.adminReset, { method:'POST', auth:true });
+      await refreshData();
+      toast('Data reset','ok');
+      renderAdmin();
+    } catch(e){ toast(e.message,'err'); }
+  });
+}
+
+/* ---------- helpers ---------- */
+function val(id){ return document.getElementById(id).value; }
+function esc(s){ return String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function fmtPrice(n){ return (Math.round(n*100)/100).toFixed(2); }
+function toast(msg, kind=''){
+  const host = document.getElementById('toast-host');
+  const el = document.createElement('div'); el.className = 'toast '+(kind||''); el.textContent = msg;
+  host.appendChild(el);
+  setTimeout(()=>{ el.style.opacity='0'; el.style.transition='opacity .25s'; setTimeout(()=>el.remove(),250); }, 2400);
+}
+
+bootstrap();
+</script>
+</body>
+</html>
