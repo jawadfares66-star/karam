@@ -1,0 +1,19 @@
+{
+  "name": "karam",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Karam — Arab food ordering site (Vercel + Stripe + Telegram)",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {
+    "@vercel/kv": "^2.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "stripe": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
