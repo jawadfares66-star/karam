@@ -1,0 +1,76 @@
+// Default data loaded on first run, before admin has made any edits.
+// Mirrors the artifact version. Edit freely.
+
+export const DEFAULTS = {
+  config: {
+    brandName: 'Karam',
+    brandAr: 'كرم',
+    tagline: "Real Arab cooking for students far from home. Shawarma the way your aunt would make it, mansaf that doesn't apologise, and sweets that taste like Eid morning.",
+    currency: '£',
+    basePostcode: 'E3 4TN',
+    maxRadiusMiles: 5,
+    baseDeliveryFee: 2.99,
+    perMileFee: 2.99,
+    baseDeliveryMin: 45,
+    perMileDeliveryMin: 15,
+    freeDeliveryOver: 0,
+    minOrder: 10,
+    telegramUsername: 'karam_orders',
+    whatsappNumber: '447000000000',
+    email: 'hello@karam.london',
+    hoursNote: 'Last orders 30 minutes before closing. Delivery may pause briefly during prayer times on Fridays.',
+  },
+  categories: [
+    { id: 'c1', name: 'Mezze',           nameAr: 'مقبّلات',   icon: '🥗' },
+    { id: 'c2', name: 'Shawarma & Wraps',nameAr: 'شاورما',    icon: '🌯' },
+    { id: 'c3', name: 'From the grill',  nameAr: 'مشاوي',     icon: '🍖' },
+    { id: 'c4', name: 'Rice & Mansaf',   nameAr: 'أرز ومنسف', icon: '🍚' },
+    { id: 'c5', name: 'Sweets',          nameAr: 'حلويات',    icon: '🍯' },
+    { id: 'c6', name: 'Drinks',          nameAr: 'مشروبات',   icon: '🫖' },
+  ],
+  menu: [
+    { id:'m1', categoryId:'c1', name:'Hummus & warm bread',     nameAr:'حمّص',         desc:'Stone-ground chickpeas, tahini, lemon, olive oil. Served with fresh khobz.', price:6.5,  image:'https://images.unsplash.com/photo-1577805947697-89e18249d767?w=800&q=80', tag:'' },
+    { id:'m2', categoryId:'c1', name:'Mutabbal',                nameAr:'متبّل',         desc:'Smoked aubergine, tahini, garlic, pomegranate molasses.',                   price:6.5,  image:'https://images.unsplash.com/photo-1633945274405-b6c8b6b51137?w=800&q=80', tag:'' },
+    { id:'m3', categoryId:'c1', name:'Fattoush',                nameAr:'فتّوش',         desc:'Crisp lettuce, sumac, toasted khobz, mint, lemon.',                         price:7.0,  image:'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=800&q=80', tag:'' },
+    { id:'m4', categoryId:'c2', name:'Chicken shawarma wrap',   nameAr:'شاورما دجاج',  desc:'Marinated chicken, garlic toum, pickles, fries inside.',                    price:8.5,  image:'https://images.unsplash.com/photo-1633321702518-7feccafb94d5?w=800&q=80', tag:'Bestseller' },
+    { id:'m5', categoryId:'c2', name:'Beef shawarma wrap',      nameAr:'شاورما لحم',   desc:'Slow-roasted beef, tahini, tomato, parsley.',                               price:9.0,  image:'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=800&q=80', tag:'' },
+    { id:'m6', categoryId:'c2', name:'Falafel sandwich',        nameAr:'فلافل',         desc:'Crisp falafel, pickled turnip, tahini sauce, herbs.',                       price:7.0,  image:'https://images.unsplash.com/photo-1593001874117-c99c800e3eb7?w=800&q=80', tag:'Vegan' },
+    { id:'m7', categoryId:'c3', name:'Mixed grill plate',       nameAr:'مشاوي مشكّلة', desc:'Lamb kofta, shish taouk, beef skewer, grilled vegetables, rice.',           price:18.0, image:'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80', tag:'' },
+    { id:'m8', categoryId:'c3', name:'Shish taouk',             nameAr:'شيش طاووق',    desc:'Chargrilled chicken skewers, garlic toum, vermicelli rice.',                price:13.5, image:'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80', tag:'' },
+    { id:'m9', categoryId:'c4', name:'Mansaf (lamb)',           nameAr:'منسف',          desc:'Slow-cooked lamb, jameed yoghurt, rice, almonds. Friday special.',          price:16.5, image:'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&q=80', tag:'Friday' },
+    { id:'m10',categoryId:'c4', name:'Maqluba',                 nameAr:'مقلوبة',        desc:'Upside-down rice with chicken, aubergine, cauliflower, pine nuts.',         price:14.0, image:'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80', tag:'' },
+    { id:'m11',categoryId:'c5', name:'Baklava (4 pieces)',      nameAr:'بقلاوة',        desc:'Pistachio, walnut, rose syrup. Made fresh every morning.',                  price:5.5,  image:'https://images.unsplash.com/photo-1610508500445-a4592435e27e?w=800&q=80', tag:'' },
+    { id:'m12',categoryId:'c5', name:'Knafeh',                  nameAr:'كنافة',         desc:'Stretchy cheese, semolina pastry, sugar syrup, pistachios.',                price:6.5,  image:'https://images.unsplash.com/photo-1635363638580-c2809d049eee?w=800&q=80', tag:'' },
+    { id:'m13',categoryId:'c6', name:'Mint tea',                nameAr:'شاي بالنعناع', desc:'Strong black tea, fresh mint, sugar to taste.',                             price:2.5,  image:'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=800&q=80', tag:'' },
+    { id:'m14',categoryId:'c6', name:'Jallab',                  nameAr:'جلّاب',         desc:'Date molasses, rose water, pine nuts, crushed ice.',                        price:3.5,  image:'https://images.unsplash.com/photo-1546039907-7fa05f864c02?w=800&q=80', tag:'' },
+  ],
+  reviews: [
+    { id:'r1', name:'Yousef A.', initials:'YA', stars:5, text:'Tastes exactly like the shawarma on my street in Amman. I cried a little. Delivery was 22 minutes.', date:'2 weeks ago' },
+    { id:'r2', name:'Lina M.',   initials:'LM', stars:5, text:'Friday mansaf is the real thing. Jameed, lamb, the whole ritual. Ordering every Friday now.',         date:'3 weeks ago' },
+    { id:'r3', name:'Khalid S.', initials:'KS', stars:5, text:'Knafeh stayed warm and stretchy by the time it arrived. I do not know how but I respect it. 10/10.',  date:'1 month ago' },
+    { id:'r4', name:'Noor H.',   initials:'NH', stars:5, text:'Vegetarian-friendly, generous portions, and the fattoush actually has lemon and sumac like it should.',date:'1 month ago' },
+    { id:'r5', name:'Omar B.',   initials:'OB', stars:5, text:'First time ordering and they sent a little extra baklava with a note in Arabic. Customer for life.',  date:'2 months ago' },
+    { id:'r6', name:'Salma D.',  initials:'SD', stars:5, text:'Found this during exam season. Eating their mixed grill at 1am while studying = home.',               date:'3 months ago' },
+  ],
+  hours: [
+    { day:'Monday',    dayAr:'الإثنين',  open:'11:30', close:'22:30', closed:false },
+    { day:'Tuesday',   dayAr:'الثلاثاء', open:'11:30', close:'22:30', closed:false },
+    { day:'Wednesday', dayAr:'الأربعاء', open:'11:30', close:'22:30', closed:false },
+    { day:'Thursday',  dayAr:'الخميس',   open:'11:30', close:'23:00', closed:false },
+    { day:'Friday',    dayAr:'الجمعة',   open:'13:30', close:'23:30', closed:false },
+    { day:'Saturday',  dayAr:'السبت',    open:'12:00', close:'23:30', closed:false },
+    { day:'Sunday',    dayAr:'الأحد',    open:'12:00', close:'22:00', closed:false },
+  ],
+  gallery: [
+    { id:'g1', image:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900&q=80', caption:'Mezze, ready for the table',     size:'wide' },
+    { id:'g2', image:'https://images.unsplash.com/photo-1604908554007-3306dca4ceb1?w=900&q=80', caption:'Lamb on the charcoal',           size:'normal' },
+    { id:'g3', image:'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=900&q=80',     caption:'Fresh khobz from the morning',  size:'tall' },
+    { id:'g4', image:'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=900&q=80', caption:'Knafeh, pulled apart',           size:'normal' },
+    { id:'g5', image:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&q=80', caption:'Pomegranate and parsley',        size:'normal' },
+    { id:'g6', image:'https://images.unsplash.com/photo-1542528180-a1208c5169a5?w=900&q=80', caption:'Mint tea, poured high',           size:'wide' },
+    { id:'g7', image:'https://images.unsplash.com/photo-1633237308525-cd587cf71926?w=900&q=80', caption:'Baklava trays, fresh from the oven', size:'normal' },
+  ],
+};
+
+// Valid storage keys — must match defaults above
+export const KEYS = ['config', 'categories', 'menu', 'reviews', 'hours', 'gallery'];
